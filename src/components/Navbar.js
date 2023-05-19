@@ -5,7 +5,14 @@ import Form from 'react-bootstrap/Form';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 
-const Navbars =()=> {
+const Navbars =({Weight, Height, SetWeight,SetHeight})=> {
+
+  const Calculate =()=>{
+    let answer = Weight /(Height * Height);
+    console.log(answer)
+    SetWeight('')
+    SetHeight('')
+  }
   return (
     <div>
         {/* Navbar */}
@@ -21,7 +28,7 @@ const Navbars =()=> {
           >
           </Nav>
           <Form className="d-flex">
-            <Button variant="outline-success">Calculate</Button>
+            <Button variant="outline-success" onClick={Calculate}>Calculate</Button>
           </Form>
         </Navbar.Collapse>
       </Container>
